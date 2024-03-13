@@ -25,4 +25,4 @@ async def treeSync(ctx):
     await bot.tree.sync()
     print(bot.tree)
 
-bot.run('MTIxNzEzNDAyMzM2NTg5MDE1OQ.GUv_O5.33tR-kdoEduMOQR4kmnLumhekjSIU3pp1h_z0k')
+bot.run('KEYGOESHERE')
