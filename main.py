@@ -25,4 +25,13 @@ async def treeSync(ctx):
     await bot.tree.sync()
     print(bot.tree)
 
+@bot.hybrid_command()
+async def add_rss(ctx):
+    """
+Adds an RSS feed to the current channel.
+"""
+    
+    await ctx.send(msg)
+
+#todo - Add subscribe command
 bot.run('KEYGOESHERE')
