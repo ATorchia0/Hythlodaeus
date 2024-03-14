@@ -1,7 +1,6 @@
 import feedparser
 import asyncio
-import async_timeout
-
+import json
 
 #schema, ctx -> url dict.
 curSubs = {}
@@ -53,3 +52,16 @@ async def check_rss_feeds(feed_dict, last_check_dict):
 
         # Sleep for a specified interval (e.g., 1 hour)
         await asyncio.sleep(3600)
+
+def saveState():
+    subList = open("subList", "w")
+    updateList = open("updateList", "w")
+    json.dump(curSubs, subList)
+    json.dump(update_time, updateList)
+    subList.close()
+    updateList.close()
+
+def loadState():
+    with open("subList", "r") as subFile, open("updateList", "r") as updateFile:
+        curSubs = json.load(subFile)
+        update_time = json.load(updateFile)
